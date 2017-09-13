@@ -65,7 +65,9 @@ More extensive documentation (generated with Sphinx) is available in the `python
 ## Changelog
 
 - 2015-12-10 First public release (0.1)
-- 2016-08-16 Minor release:
-   1. the official Spark target is Spark 0.2
+- 2016-08-16 Minor release (0.2.0):
+   1. the official Spark target is Spark 2.0
    2. support for keyed models
+- 2017-09-11 Minor release (0.2.1):
+   1. The official Spark target is Spark >= 2.1
 

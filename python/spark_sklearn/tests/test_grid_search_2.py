@@ -4,7 +4,7 @@ from sklearn.linear_model import Lasso as SKL_Lasso
 from sklearn.feature_extraction.text import HashingVectorizer as SKL_HashingVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer as SKL_TfidfTransformer
 from sklearn.pipeline import Pipeline as SKL_Pipeline
-from sklearn import svm, grid_search, datasets
+from sklearn import svm, model_selection, datasets
 import sys
 if sys.version_info[:2] <= (2, 6):
     try:
@@ -36,7 +36,7 @@ class CVTests2(MLlibTestCase):
         iris = datasets.load_iris()
         parameters = {'kernel':('linear', 'rbf'), 'C':[1, 10]}
         svr = svm.SVC()
-        clf = grid_search.GridSearchCV(svr, parameters)
+        clf = model_selection.GridSearchCV(svr, parameters)
         clf.fit(iris.data, iris.target)
 
         clf2 = GridSearchCV(self.sc, svr, parameters)
