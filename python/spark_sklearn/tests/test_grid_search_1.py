@@ -35,7 +35,6 @@ def _create_method(method):
     return do_test_expected
         
 def _add_to_module():
-    print("WARNING smurching: Replace sklearn")
     SKGridSearchCV = sklearn.model_selection.GridSearchCV
     sklearn.model_selection.GridSearchCV = SPGridSearchWrapper
     sklearn.model_selection.GridSearchCV_original = SKGridSearchCV
@@ -44,10 +43,8 @@ def _add_to_module():
                    if mname.startswith("test_")]
 
     for name, method in all_methods:
-        #if "GridSearchCV" in name and "doctest" not in name:
-            print("TESTING: %s"%name)
-            method_for_test = _create_method(method)
-            method_for_test.__name__ = name
-            setattr (AllTests, method.__name__, method_for_test)
+        method_for_test = _create_method(method)
+        method_for_test.__name__ = name
+        setattr (AllTests, method.__name__, method_for_test)
 
 _add_to_module()
