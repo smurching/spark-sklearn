@@ -21,6 +21,14 @@ CLASSIFIERS = [
 ]
 INSTALL_REQUIRES = ["scikit-learn >=0.18.1, <=0.19"]
 
+# Dependencies for building the docs
+EXTRAS_REQUIRES_DOCS = ["pyspark"]
+
+# All 'extra' dependencies that can be condiitonally installed by packages depending
+# on spark-sklearn (see http://setuptools.readthedocs.
+# io/en/latest/setuptools.html#declaring-extras-optional-features-with-their-own-dependencies)
+EXTRAS_REQUIRES = {"docs" : EXTRAS_REQUIRES_DOCS}
+
 # Project root
 ROOT = os.path.abspath(os.getcwd() + "/")
 
@@ -48,5 +56,6 @@ setup(
 	packages=PACKAGES,
 	classifiers=CLASSIFIERS,
 	zip_safe=False,
-	install_requires=INSTALL_REQUIRES
+	install_requires=INSTALL_REQUIRES,
+	extras_requires=EXTRAS_REQUIRES
 )
