@@ -1,7 +1,0 @@
-python:
-    extra_requirements:
-        - docs
-#    pip_install: true
-
-#requirements_file: ./requirements-docs.txt
-

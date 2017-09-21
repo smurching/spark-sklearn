@@ -1,1 +1,1 @@
-python
+python/spark_sklearn
