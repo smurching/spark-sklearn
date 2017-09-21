@@ -3,5 +3,5 @@ python:
         - docs
 #    pip_install: true
 
-requirements_file: requirements-docs.txt
+requirements_file: python/requirements-docs.txt
 
